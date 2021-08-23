@@ -20,9 +20,9 @@ export default function Countries({countries}) {
   }
 
   return (
-    <section>
-      <h1>Paises</h1>
-      <ul className={styles.countries} >
+    <section className={styles.countries} >
+      <h1 className={styles.countries_title}>Listado de Países</h1>
+      <ul className={styles.countries_list}>
         { 
           countries && countries.map((c, index) => (
             <li className={styles.country} key={index} >
