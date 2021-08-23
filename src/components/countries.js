@@ -7,6 +7,17 @@ export default function Countries({countries}) {
   console.log(countries)
 
   const [ continent, setContinent ] = useState(null)
+  const [ modal, setModal ] = useState(null)
+
+
+  const openModal = (region) => {
+    setContinent(region)
+    setModal(true)
+  }
+
+  const onClose = () => {
+    setModal(false)
+  }
 
   return (
     <section>
@@ -15,12 +26,15 @@ export default function Countries({countries}) {
         { 
           countries && countries.map((c, index) => (
             <li className={styles.country} key={index} >
-              <button onClick={() => { setContinent(c.region) }} className={styles.country_btn} >{c.nativeName}</button>
+              <button onClick={() => { openModal(c.region) }} className={styles.country_btn} >{c.nativeName}</button>
             </li>
           ))
         }
       </ul>
-      {/* <Modal continent={continent} /> */}
+      {
+        modal && <Modal onClose={onClose} continent={continent} />
+      }
+      
     </section>
   )
 }
