@@ -11,10 +11,11 @@
   justify-content: center;
 }
 .country_btn {
-  padding: 15px;
+  height: 45px;
   max-width: 250px;
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
   margin-bottom: 15px;
   cursor: pointer;

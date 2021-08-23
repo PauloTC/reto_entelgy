@@ -4,25 +4,18 @@ import {useState, useEffect} from 'react'
 
 function App() {
 
-  const [countries, setCountries] = useState(null)
-
+  const [countries , setCountries] = useState(null)
 
   useEffect(() => {
-    handleCountries()
-  });
+    async function fetchAPI() {
+      let response = await fetch('https://restcountries.eu/rest/v2/lang/es')
+      response = await response.json()
+      setCountries(response)
+    }
 
-  const handleCountries = async () =>  {
-    await fetch('https://restcountries.eu/rest/v2/lang/es')
-      .then(response => (
-        response.json()
-      ))
-      .then(data =>  (
-        setCountries(data)
-      ))
-      .catch(function(error) {
-        console.log('Hubo un problema con la petición Fetch:' + error.message);
-    });
-  }
+    fetchAPI()
+  }, [])
+
   return (
     <div className="App">
       <Countries countries={countries}  />
