@@ -26,7 +26,9 @@ export default function Countries({countries}) {
         { 
           countries && countries.map((c, index) => (
             <li className={styles.country} key={index} >
-              <button onClick={() => { openModal(c.region) }} className={styles.country_btn} >{c.nativeName}</button>
+              <button onClick={() => { openModal(c.region) }} className={styles.country_btn}>
+                <span>{c.nativeName}</span>
+              </button>
             </li>
           ))
         }
