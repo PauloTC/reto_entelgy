@@ -4,8 +4,6 @@ import Modal from './modal'
 
 export default function Countries({countries}) {
 
-  console.log(countries)
-
   const [ continent, setContinent ] = useState(null)
   const [ modal, setModal ] = useState(null)
 
