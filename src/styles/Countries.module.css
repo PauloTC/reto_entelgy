@@ -1,0 +1,21 @@
+.countries {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.country {
+  width: 33.33%;
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+.country_btn {
+  padding: 15px;
+  max-width: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
